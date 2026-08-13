@@ -140,7 +140,7 @@ pipeline {
 
                         echo "Updating Kubernetes deployment image..."
 
-                        sed -i "s|image: .*|image: ayanshaji/ultimate-cicd:${BUILD_NUMBER}|g" node-app-manifests/deployment.yml
+                        sed -i "s|image: .*|image: fathimazahra7907/ultimate-cicd:${BUILD_NUMBER}|g" node-app-manifests/deployment.yml
 
                         echo "Checking changes..."
 
