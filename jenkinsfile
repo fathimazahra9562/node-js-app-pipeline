@@ -140,13 +140,13 @@ pipeline {
 
                         echo "Updating Kubernetes deployment image..."
 
-                        sed -i "s|image: .*|image: fathimazahra7907/ultimate-cicd:${BUILD_NUMBER}|g" node-app-manifests/deployment.yml
+                        sed -i "s|image: .*|image: fathimazahra7907/ultimate-cicd:${BUILD_NUMBER}|g" node-app-manifests/deployment.yaml
 
                         echo "Checking changes..."
 
                         git diff
 
-                        git add node-app-manifests/deployment.yml
+                        git add node-app-manifests/deployment.yaml
 
                         git commit -m "Update image tag to ${BUILD_NUMBER} [skip ci]" || echo "No changes to commit"
 
