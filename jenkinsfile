@@ -111,7 +111,7 @@ pipeline {
 
             environment {
                 GIT_REPO_NAME = 'node-js'
-                GIT_USER_NAME = 'fathimazahra7907'
+                GIT_USER_NAME = 'fathimazahra9562'
             }
 
             steps {
