@@ -21,11 +21,13 @@ pipeline {
       }
     }
     
-   stage('SonarQube Analysis') {
+  stage('SonarQube Analysis') {
     steps {
         sh '''
             cd node-app
             npm install
+            chmod +x node_modules/.bin/sonar-scanner
+
             ./node_modules/.bin/sonar-scanner \
               -Dsonar.projectKey=node-express-app \
               -Dsonar.projectName="Node Express App" \
