@@ -15,20 +15,26 @@ spec:
         app: node-app
     spec:
       containers:
-      - name: node-app
-        image: fathimazahra7907/ultimate-cicd:latest
-        ports:
-        - containerPort: 3000
-        resources:
-          limits:
-            cpu: "500m"
-            memory: "256Mi"
-          requests:
-            cpu: "250m"
-            memory: "128Mi"
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 3000
-          initialDelaySeconds: 10
-          periodSeconds: 5
+        - name: node-app
+          image: fathimazahra7907/ultimate-cicd:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+            requests:
+              cpu: "250m"
+              memory: "128Mi"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
